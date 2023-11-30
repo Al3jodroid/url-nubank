@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:urlpocket/ui/connectivity_widget.dart';
+import 'package:urlpocket/ui/url_shirk_form.dart';
+import 'package:urlpocket/util/utils.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key, required this.title});
@@ -9,14 +12,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePage extends State<HomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,25 +19,20 @@ class _HomePage extends State<HomePage> {
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(widget.title),
       ),
-      body: Center(
+      body: Padding(
+        padding: const EdgeInsets.only(left: 8, right: 8),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
+          children: [
+            const ConnectivityWidget(),
+            UrlShrinkForm(
+              onClickShrinkUrl: _askToShrinkUrl,
+              validateUrl: validateUrl,
+            )
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ),
     );
   }
+
+  _askToShrinkUrl(String url) {}
 }

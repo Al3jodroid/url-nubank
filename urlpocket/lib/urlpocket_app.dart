@@ -18,12 +18,12 @@ class UrlPocketApp extends StatelessWidget {
         BlocProvider<UrlCubit>(create: (context) => UrlCubit()),
       ],
       child: MaterialApp(
-        title: 'Flutter Demo',
+        title: 'UrlPocket!',
         theme: ThemeData(
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           useMaterial3: true,
         ),
-        home: const HomePage(title: 'Flutter Demo Home Page'),
+        home: const HomePage(title: 'Url Pocket Converter'),
       ),
     );
   }
