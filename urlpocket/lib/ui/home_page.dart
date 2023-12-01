@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:urlpocket/provider/url_cubit.dart';
 import 'package:urlpocket/ui/connectivity_widget.dart';
 import 'package:urlpocket/ui/url_shirk_form.dart';
 import 'package:urlpocket/util/utils.dart';
@@ -34,5 +36,7 @@ class _HomePage extends State<HomePage> {
     );
   }
 
-  _askToShrinkUrl(String url) {}
+  _askToShrinkUrl(String url) {
+    context.read<UrlCubit>().shrinkUrl(url);
+  }
 }

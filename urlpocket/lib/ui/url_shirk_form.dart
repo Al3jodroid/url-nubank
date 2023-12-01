@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:urlpocket/util/utils.dart';
 
 class UrlShrinkForm extends StatefulWidget {
   final Function(String) onClickShrinkUrl;
@@ -52,7 +51,9 @@ class _UrlShrinkFormState extends State<UrlShrinkForm> {
       onPressed: () {
         // Validate will return true if the form is valid, or false if
         // the form is invalid.
-        if (_formKey.currentState!.validate()) {}
+        if (_formKey.currentState!.validate()) {
+          widget.onClickShrinkUrl(validUrl);
+        }
       },
       child: const Text('Shrink it!'),
     );
@@ -60,10 +61,11 @@ class _UrlShrinkFormState extends State<UrlShrinkForm> {
 
   String? validateUrlInput(String? value) {
     if (value == null || value.isEmpty) {
-      return 'Please enter some text';
-    } else if (!validateUrl(value)) {
-      return 'Please enter a valid url';
+      return 'Enter the url to shrink';
+    } else if (!widget.validateUrl(value)) {
+      return 'Please enter a valid url (http)';
     }
+    validUrl = value;
     return null;
   }
 }

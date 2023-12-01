@@ -23,7 +23,7 @@ class UrlPocketApp extends StatelessWidget {
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           useMaterial3: true,
         ),
-        home: const HomePage(title: 'Url Pocket Converter'),
+        home: const HomePage(title: 'Url Shrinker'),
       ),
     );
   }

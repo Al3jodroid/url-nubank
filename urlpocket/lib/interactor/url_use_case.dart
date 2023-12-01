@@ -1,4 +1,5 @@
+import 'package:urlpocket/interactor/url_shrink_result.dart';
+
 abstract class UrlUseCase {
-  Future<String> shrinkUrl();
-  Future<String> getShrinkedUrl();
+  Future<UrlShrinkResult> shrinkUrl(String url);
 }
