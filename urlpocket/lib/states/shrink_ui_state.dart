@@ -21,11 +21,6 @@ class ShrinkResultUiState extends ShrinkUiState {
   List<Object?> get props => [urlShrink];
 }
 
-class ShrinkEmptyUiState extends ShrinkUiState {
-  @override
-  List<Object> get props => [];
-}
-
 class ShrinkUnavailableUiState extends ShrinkUiState {
   @override
   List<Object> get props => [];

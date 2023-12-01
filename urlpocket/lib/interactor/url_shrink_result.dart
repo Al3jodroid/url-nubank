@@ -1,6 +1,6 @@
 import 'package:urlpocket/model/data/url_shrink.dart';
 
-enum ResultStatus { success, failure, empty }
+enum ResultStatus { success, failure }
 
 class UrlShrinkResult {
   final ResultStatus status;

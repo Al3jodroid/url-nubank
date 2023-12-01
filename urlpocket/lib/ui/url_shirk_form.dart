@@ -62,9 +62,10 @@ class _UrlShrinkFormState extends State<UrlShrinkForm> {
   String? validateUrlInput(String? value) {
     if (value == null || value.isEmpty) {
       return 'Enter the url to shrink';
-    } else if (!widget.validateUrl(value)) {
-      return 'Please enter a valid url (http)';
     }
+    // else if (!widget.validateUrl(value)) {
+    //   return 'Please enter a valid url (http:// or https://)';
+    // }
     validUrl = value;
     return null;
   }

@@ -9,14 +9,10 @@ class UrlInteractor implements UrlUseCase {
 
   @override
   Future<UrlShrinkResult> shrinkUrl(String url) async {
-    final resultDto = await urlApi.requestShrinkUrl(url);
     try {
-      if (resultDto != null) {
-        var response = convertResponseToUrlShrink(resultDto);
-        return UrlShrinkResult(ResultStatus.success, response);
-      } else {
-        return UrlShrinkResult(ResultStatus.failure, null);
-      }
+      final resultDto = await urlApi.requestShrinkUrl(url);
+      var response = convertResponseToUrlShrink(resultDto);
+      return UrlShrinkResult(ResultStatus.success, response);
     } catch (e) {
       return UrlShrinkResult(ResultStatus.failure, null);
     }

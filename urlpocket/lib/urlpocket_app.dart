@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:provider/provider.dart';
 import 'package:urlpocket/provider/connectivity_provider.dart';
 import 'package:urlpocket/provider/url_cubit.dart';
+import 'package:urlpocket/provider/url_shrink_provider.dart';
 import 'package:urlpocket/ui/home_page.dart';
 
 class UrlPocketApp extends StatelessWidget {
@@ -14,6 +15,8 @@ class UrlPocketApp extends StatelessWidget {
       providers: [
         //"classic" definition of notification provider
         ChangeNotifierProvider(create: (ctx) => ConnectivityProvider()),
+        //another "classic" implementation only used for update UI widgets in the UI layer
+        ChangeNotifierProvider(create: (ctx) => UrlShrinkProvider()),
         //cubit's provider, more fun to write :)
         BlocProvider<UrlCubit>(create: (context) => UrlCubit()),
       ],
