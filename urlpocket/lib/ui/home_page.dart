@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:urlpocket/provider/url_shrink_provider.dart';
-import 'package:urlpocket/ui/connectivity_widget.dart';
 import 'package:urlpocket/ui/url_list.dart';
 import 'package:urlpocket/ui/url_shirk_form.dart';
 import 'package:urlpocket/util/utils.dart';
@@ -29,7 +28,6 @@ class _HomePage extends State<HomePage> {
         padding: const EdgeInsets.only(left: 8, right: 8),
         child: Column(
           children: [
-            const ConnectivityWidget(),
             UrlShrinkForm(
               onClickShrinkUrl: _askToShrinkUrl,
               validateUrl: validateUrl,
